@@ -383,6 +383,7 @@ p {
 }
 
 /* Celulares em pé */
+/* Celulares em pé */
 @media (max-width: 768px) {
   body {
     padding: 10px 0;
@@ -397,14 +398,37 @@ p {
   }
 
   .decor-blue-angle {
-    display: none; /* tira o grande triângulo azul no mobile */
+    display: none; /* remove o grande triângulo azul no mobile */
   }
 
   .content-left,
   .content-right {
     width: 100%;
-    padding: 24px 20px;
+    padding: 20px 18px;
     align-items: flex-start;
+  }
+
+  /* Títulos mais equilibrados no mobile */
+  h1 {
+    font-size: 32px;
+  }
+
+  .slide-cover h1 {
+    font-size: 34px;           /* “MARCOS LEVI” menor no celular */
+  }
+
+  h2 {
+    font-size: 15px;
+    letter-spacing: 1.5px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+  .subtitulo {
+    font-size: 13px;
+    letter-spacing: 2px;
   }
 
   .image-frame {
@@ -415,20 +439,8 @@ p {
 
   .footer-line {
     position: static;
-    margin: 8px 20px 20px 20px;
+    margin: 8px 18px 18px 18px;
     text-align: left;
-  }
-
-  h1 {
-    font-size: 32px;
-  }
-
-  h2 {
-    font-size: 16px;
-  }
-
-  p {
-    font-size: 15px;
   }
 
   .stats-box {
@@ -441,7 +453,7 @@ p {
     padding: 8px 10px;
   }
 
-  /* Galeria de design no mobile: 2 por linha */
+  /* Galeria de design: 2 por linha */
   .gallery-row {
     flex-wrap: wrap;
   }
@@ -475,13 +487,30 @@ p {
     height: auto;
   }
 
-  /* Link no rodapé: quebra de linha melhor */
+  /* Link no rodapé: quebrar embaixo para não colar no título */
   .section-link {
     display: block;
     margin-left: 0;
     margin-top: 4px;
   }
 }
+
+/* Celulares bem pequenos */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 26px;
+  }
+
+  .content-left,
+  .content-right {
+    padding: 16px 14px;
+  }
+
+  .gallery-item {
+    flex: 1 1 100%;
+  }
+}
+
 
 /* Celulares bem pequenos */
 @media (max-width: 480px) {
