@@ -382,39 +382,42 @@ p {
   }
 }
 
-/* Celulares em pé */
-/* Celulares em pé */
 @media (max-width: 768px) {
   body {
-    padding: 10px 0;
+    padding: 0;
   }
 
   .slide {
     width: 100%;
     height: auto;
     flex-direction: column;
-    transform: none;
+    transform: none;      /* remove qualquer scale */
     border-radius: 0;
   }
 
   .decor-blue-angle {
-    display: none; /* remove o grande triângulo azul no mobile */
+    display: none;        /* tira o triângulo azul no mobile */
   }
 
   .content-left,
   .content-right {
     width: 100%;
-    padding: 20px 18px;
+    margin: 0;
+    padding: 20px 16px;   /* ocupa a tela quase inteira */
     align-items: flex-start;
   }
 
-  /* Títulos mais equilibrados no mobile */
+  /* Capa alinhada como o resto */
+  .slide-cover .content-left {
+    padding-top: 24px;
+  }
+
   h1 {
-    font-size: 32px;
+    font-size: 30px;
   }
 
   .slide-cover h1 {
-    font-size: 34px;           /* “MARCOS LEVI” menor no celular */
+    font-size: 32px;
   }
 
   h2 {
@@ -423,7 +426,8 @@ p {
   }
 
   p {
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 1.6;
   }
 
   .subtitulo {
@@ -439,21 +443,22 @@ p {
 
   .footer-line {
     position: static;
-    margin: 8px 18px 18px 18px;
+    margin: 8px 16px 18px 16px;
     text-align: left;
   }
 
   .stats-box {
+    width: 100%;
+    justify-content: space-between;
     gap: 8px;
   }
 
   .stat {
     flex: 1;
-    min-width: auto;
-    padding: 8px 10px;
+    min-width: 0;
+    padding: 8px 6px;
   }
 
-  /* Galeria de design: 2 por linha */
   .gallery-row {
     flex-wrap: wrap;
   }
@@ -468,7 +473,6 @@ p {
     transform: none;
   }
 
-  /* Slide de cursos */
   .slide-courses .content-right {
     align-items: flex-start;
     padding-top: 0;
@@ -487,7 +491,6 @@ p {
     height: auto;
   }
 
-  /* Link no rodapé: quebrar embaixo para não colar no título */
   .section-link {
     display: block;
     margin-left: 0;
@@ -498,7 +501,7 @@ p {
 /* Celulares bem pequenos */
 @media (max-width: 480px) {
   h1 {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   .content-left,
@@ -509,26 +512,100 @@ p {
   .gallery-item {
     flex: 1 1 100%;
   }
+}/* Ajuste específico dos cards no mobile */
+@media (max-width: 768px) {
+  /* garante que a coluna de texto do slide 2 use toda a largura */
+  .slide-portfolio .content-left {
+    width: 100%;
+  }
+
+  /* empilha os cards um embaixo do outro e deixa largura total */
+  .slide-portfolio .stats-box {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .slide-portfolio .stat {
+    width: 100%;
+    max-width: none;
+    font-size: 14px;
+  }
 }
-
-
-/* Celulares bem pequenos */
-@media (max-width: 480px) {
-  h1 {
-    font-size: 26px;
+/* Ajuste específico dos cards no mobile */
+@media (max-width: 768px) {
+  /* garante que a coluna de texto do slide 2 use toda a largura */
+  .slide-portfolio .content-left {
+    width: 100%;
   }
 
-  .subtitulo {
-    font-size: 13px;
-    letter-spacing: 2px;
+  /* empilha os cards um embaixo do outro e deixa largura total */
+  .slide-portfolio .stats-box {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 16px;
   }
 
-  .content-left,
-  .content-right {
-    padding: 18px 16px;
+  .slide-portfolio .stat {
+    width: 100%;
+    max-width: none;
+    font-size: 14px;
+  }
+}
+/* Ajuste específico dos cards no mobile */
+@media (max-width: 768px) {
+  /* garante que a coluna de texto do slide 2 use toda a largura */
+  .slide-portfolio .content-left {
+    width: 100%;
   }
 
-  .gallery-item {
-    flex: 1 1 100%;
+  /* empilha os cards um embaixo do outro e deixa largura total */
+  .slide-portfolio .stats-box {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .slide-portfolio .stat {
+    width: 100%;
+    max-width: none;
+    font-size: 14px;
+  }
+}
+/* Ajustes finos para celular */
+@media (max-width: 768px) {
+  /* Título da capa mais compacto e alinhado */
+  .slide-cover .content-left {
+    padding: 20px 16px 12px 16px;
+  }
+
+  .slide-cover h1 {
+    font-size: 28px;
+    line-height: 1.1;
+  }
+
+  /* Centralizar imagem do slide SITE PORTFÓLIO */
+  .slide-portfolio .content-right {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0;
+  }
+
+  .slide-portfolio .image-frame {
+    width: 90%;
+    margin: 12px auto 0 auto;
+  }
+
+  /* Opcional: centralizar qualquer image-frame em outros slides também */
+  .image-frame {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
